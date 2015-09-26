@@ -1,6 +1,6 @@
 {
   "name": "is-cacheable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Check whether or not a HTTP response is cacheable",
   "main": "index.js",
   "scripts": {
