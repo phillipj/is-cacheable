@@ -6,7 +6,7 @@ var isCacheable = require('../')
 
 test('expires', function (t) {
   t.test('in the future', function (t) {
-    t.true(isCacheable({ 'expires': 'Sat, Sep 26 2015 20:33:26 GMT' }))
+    t.true(isCacheable({ 'expires': 'Sat, Sep 26 2100 20:33:26 GMT' }))
     t.end()
   })
 

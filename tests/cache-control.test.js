@@ -10,6 +10,15 @@ test('cache-control', function (t) {
     t.end()
   })
 
+  t.test('public and expires', function (t) {
+    t.true(isCacheable({
+      'cache-control': 'public',
+      'expires': 'Fri, 01 Jan 2100 12:00:00 GMT'
+    }))
+
+    t.end()
+  })
+
   t.test('max-age in the past / below zero', function (t) {
     t.false(isCacheable({ 'cache-control': 'max-age=0' }))
     t.false(isCacheable({ 'cache-control': 'max-age=-100' }))

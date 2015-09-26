@@ -18,7 +18,9 @@ module.exports = function isCacheable (headers) {
       var deltaSeconds = parseInt(cacheControl['max-age'], 10)
       return deltaSeconds > 0
     }
-  } else if ('expires' in headers) {
+  }
+
+  if ('expires' in headers) {
     var expiryUnixTime = new Date(headers['expires']).getTime()
     return expiryUnixTime > Date.now()
   } else if ('etag' in headers) {
